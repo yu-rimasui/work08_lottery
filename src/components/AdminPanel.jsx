@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 
-function AdminPanel({ numbers, addNumber, deleteNumber }) {
-  const [newNumber, setNewNumber] = useState("");
+const AdminPanel = (props) => {
+  const { numbers, addNumber, deleteNumber } = props;
+  // const [inputNum, setInputNum] = useState("");
 
   const handleAdd = () => {
-    if (newNumber && !numbers.includes(newNumber)) {
-      addNumber(newNumber);
-      setNewNumber("");
+    const newNumber = document.getElementById("new-number");
+    console.log(newNumber.value);
+    if (newNumber.value === "") {
+      document.getElementById("input-error").innerText =
+        "レコード番号を入力してください。";
+      return;
+    } else {
+      document.getElementById("input-error").innerText = "";
+      addNumber(newNumber.value);
+      newNumber.value = "";
     }
   };
 
@@ -16,22 +24,21 @@ function AdminPanel({ numbers, addNumber, deleteNumber }) {
 
   return (
     <div>
-      <input
-        type="number"
-        value={newNumber}
-        onChange={(e) => setNewNumber(Number(e.target.value))}
-        placeholder="番号を入力"
-      />
+      <input type="text" placeholder="番号を入力" id="new-number" />
+      <div class="text-danger" id="input-error"></div>
       <button onClick={handleAdd}>追加</button>
       <ul>
-        {numbers.map((number) => (
-          <li key={number}>
-            {number} <button onClick={() => handleDelete(number)}>削除</button>
+        {Object.keys(numbers).map((key) => (
+          <li key={key}>
+            {numbers[key]}
+            <button key={key} onClick={() => handleDelete(key)}>
+              削除
+            </button>
           </li>
         ))}
       </ul>
     </div>
   );
-}
+};
 
 export default AdminPanel;

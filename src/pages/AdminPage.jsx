@@ -1,16 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import AdminPanel from "../components/AdminPanel";
 
-function AdminPage() {
-  const [numbers, setNumbers] = useState([]);
-
-  const addNumber = (newNumber) => {
-    setNumbers([...numbers, newNumber]);
-  };
-
-  const deleteNumber = (numberToDelete) => {
-    setNumbers(numbers.filter((number) => number !== numberToDelete));
-  };
+const AdminPage = (props) => {
+  const { numbers, addNumber, deleteNumber } = props;
 
   return (
     <div>
@@ -22,6 +14,6 @@ function AdminPage() {
       />
     </div>
   );
-}
+};
 
 export default AdminPage;

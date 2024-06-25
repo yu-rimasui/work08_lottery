@@ -1,30 +1,19 @@
-import React, { useEffect, useState } from "react";
-import NumberCard from "./NumberCard";
+import React from "react";
 
-function UserPanel() {
-  const [numbers, setNumbers] = useState([]);
-
-  useEffect(() => {
-    // 仮のデータ取得関数。実際にはAPIから取得する
-    const fetchNumbers = () => {
-      // ここに実際のAPIコールを実装
-      // 例えば、fetch('/api/numbers').then(response => response.json()).then(data => setNumbers(data));
-      setNumbers([1, 2, 3, 45, 67, 89]); // 仮データ
-    };
-
-    fetchNumbers();
-  }, []);
+const UserPanel = (props) => {
+  const { numbers } = props;
+  // const numbers = ["A111", "B234"];
 
   return (
     <div>
-      <h1>番号確認</h1>
+      <h2>番号確認</h2>
       <div className="number-grid">
-        {numbers.map((number) => (
-          <NumberCard key={number} number={number} />
+        {Object.keys(numbers).map((key) => (
+          <div key={key}>{numbers[key]}</div>
         ))}
       </div>
     </div>
   );
-}
+};
 
 export default UserPanel;
