@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const AdminPanel = (props) => {
   const { numbers, addNumber, deleteNumber } = props;
