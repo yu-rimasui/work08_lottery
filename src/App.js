@@ -64,12 +64,9 @@ const App = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<UserPage numbers={numbers} />} />
         <Route
-          path="/yu-rimasui/work08_lottery/"
-          element={<UserPage numbers={numbers} />}
-        />
-        <Route
-          path="/yu-rimasui/work08_lottery/admin"
+          path="/admin"
           element={
             <AdminPage
               numbers={numbers}
