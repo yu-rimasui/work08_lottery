@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+body {
+  font-size: 16px;
+  line-height: 20px;
+  background: #ebf4ef;
+  color: #333333;
+  height: 100vh;
+}
+
+.bg-self {
+  background: #f5f5f5;
+}
