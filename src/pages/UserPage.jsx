@@ -14,7 +14,7 @@ const UserPage = (props) => {
           <span className="text-success ms-2">大</span>抽選会
         </h2>
       </header>
-      <h6 className="mb-3">2024年7月7日 16時～＠環境工学キャンパス体育館</h6>
+      <h6 className="mb-3">2024年7月7日 16時～＠環境人間キャンパス体育館</h6>
       <p className="mb-4">
         ★このサイトは当選番号確認ページです！受付で配布したリストバンドをご用意ください！
         <br />
