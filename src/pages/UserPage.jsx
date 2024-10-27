@@ -10,11 +10,11 @@ const UserPage = (props) => {
     <div className="p-3">
       <header className="shadow p-1 mb-4 bg-self rounded">
         <h2 className="m-3  d-flex justify-content-center">
-          <span className="text-success ">星</span>に願いを！{""}
-          <span className="text-success ms-2">大</span>抽選会
+          <span className="text-success ">フ</span>ァイナル{""}
+          <span className="text-success ms-2">ジ</span>ャックポット
         </h2>
       </header>
-      <h6 className="mb-3">2024年7月7日 16時～＠体育館</h6>
+      <h6 className="mb-3">2024年11月3日 15時45分～＠メインステージ</h6>
       <p className="mb-4">
         ★このサイトは当選番号確認ページです！受付で配布したリストバンドをご用意ください！
         <br />
